@@ -1,0 +1,44 @@
+<h1 id="tab-title">Crear Usuario</h1>
+<div class="container-main">
+    <form id="from-crear-usuario" method="post">
+        <div class="form-group">
+            <label for="usuario"><span class="obligatorio">*</span>Usuario:</label>
+            <input type="text" class="form-control" id="usuario" aria-describedby="usuario" placeholder="Usuario" name="username" require>
+        </div>
+        <div class="form-group">
+            <label for="nombre"><span class="obligatorio">*</span>Nombre:</label>
+            <input type="text" class="form-control" id="nombre" aria-describedby="nombre" placeholder="Nombre" name="name" require>
+        </div>
+        <div class="form-group">
+            <label for="p-apellido">Primer apellido:</label>
+            <input type="text" class="form-control" id="p-apellido" aria-describedby="p-apellido" placeholder="Primer apellido" name="p-apellido" require>
+        </div>
+        <div class="form-group">
+            <label for="s-apellido">Segundo apellido:</label>
+            <input type="text" class="form-control" id="s-apellido" aria-describedby="s-apellido" placeholder="Segundo apellido" name="p-apellido" require>
+        </div>
+        <div class="form-group">
+            <label for="password"><span class="obligatorio">*</span>Contraseña:</label>
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password" require>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo electónico:</label>
+            <input type="email" class="form-control" id="email" placeholder="ejemplo@siarclig.com" name="email" require>
+        </div>
+        <?php
+        if($_SESSION['rol'] == "administrador"){
+            echo '
+            <label for="select-rol"><span class="obligatorio">*</span>Rol</label>
+            <select id="select-rol" class="form-select" aria-label="select-rol">
+                <option selected>Elige un rol</option>
+                <option value="1">Administrador</option>
+                <option value="2">Veterinario</option>
+                <option value="3">Productor</option>
+            </select>';
+        }
+        ?>
+        <button id="btn-crear-usuario" type="button" class="btn btn-primary btn-login">Aceptar</button>
+        <button type="clear" class="btn btn-danger btn-login">Limpiar</button>
+    </form>
+
+</div>
